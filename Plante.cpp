@@ -13,10 +13,12 @@ Plante::Plante(string name):nomP(name) {
     int maturite = 0;
     int hydratation = 0;
     int taille = 0;
-    int engrai = 0;
+    bool engrai = false;
     string stadeMaturite = "Pousse";
     string stadeTaille = "Taillée";
 };
+
+
 
 //accesseurs
 int Plante::gethydra(){
@@ -31,8 +33,16 @@ int Plante::gettaille(){
     return taille;
 };
 
-int Plante::getengrais(){
+bool Plante::getengrais(){
     return engrai;
+};
+
+string Plante::getstadem(){
+    return stadeMaturite;
+};
+
+string Plante::getstadet(){
+    return stadeTaille;
 };
 
 void Plante::sethydra(int valeurh){
@@ -47,24 +57,21 @@ void Plante::settaille(int valeurt){
     taille=taille+valeurt;
 };
 
-void Plante::setengrais(int valeure){
-    engrai=engrai+valeure;
+void Plante::setonengrais(){
+    engrai=true;
 };
+
+void Plante::setoffengrais(){
+    engrai=false;
+};
+
+
 
 //méthodes
 void Plante::engrais(){
-    if (getengrais==0){
+    if (getengrais()==false){
         setmatur(1);
-        setengrais(1);
-        if (getmatur()>5 & getmatur()<15){
-            stadeMaturite="Plante";
-        }
-        if (getmatur()>15){
-            stadeMaturite="Fleur";
-        }
-        else {
-            stadeMaturite="Pousse";
-        }
+        setonengrais();
     }
     else{
         cout<<"Cette plante a déjà reçu de l'engrais"<<endl;
@@ -82,7 +89,16 @@ void Plante::tailler(){
 }
 
 void Plante::inspecter(){
-    cout<<"Cette "<<stadeMaturite<<" de "<<nomP<<" a une hydratation de "<<gethydra()<<" et est "<<stadeTaille<<endl;
+    if (getmatur()>5 & getmatur()<15){
+        stadeMaturite="Plante";
+    }
+    if (getmatur()>15){
+        stadeMaturite="Fleur";
+    }
+    else {
+        stadeMaturite="Pousse";
+    }
+    cout<<"Cette "<<getstadem()<<" de "<<nomP<<" a une hydratation de "<<gethydra()<<" et est "<<getstadet()<<endl;
 }
 
 #endif

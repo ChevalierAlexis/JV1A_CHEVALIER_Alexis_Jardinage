@@ -18,17 +18,20 @@ class Plante {
         int taille;
         string stadeMaturite;
         string stadeTaille;
-        int engrai;
+        bool engrai;
 
     //accesseurs
         int getmatur();
         int gethydra();
         int gettaille();
-        int getengrais();
+        bool getengrais();
+        string getstadem();
+        string getstadet();
         void setmatur(int valeurm);
         void sethydra(int valeurh);
         void settaille(int valeurt);
-        void setengrais(int valeure);
+        void setonengrais();
+        void setoffengrais();
 
     //Méthodes
         void engrais();
