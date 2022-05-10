@@ -65,6 +65,33 @@ void Plante::setoffengrais(){
     engrai=false;
 };
 
+void Plante::setstadem(){
+    if (getmatur()>5){
+        stadeMaturite="Plante";
+    }
+    if (getmatur()>15){
+        stadeMaturite="Fleur";
+    }
+    else {
+        stadeMaturite="Pousse";
+    }
+};
+
+void Plante::setstadet(){
+    if (gettaille()==0){
+        stadeTaille="non taillée";
+    }
+    if (gettaille()==1){
+        stadeTaille="taillée";
+    }
+    if (gettaille()==2){
+        stadeTaille="taillée court";
+    }
+    if (gettaille()<2){
+        stadeTaille="blessée";
+    }
+};
+
 
 
 //méthodes
@@ -72,6 +99,7 @@ void Plante::engrais(){
     if (getengrais()==false){
         setmatur(1);
         setonengrais();
+        setstadem();
     }
     else{
         cout<<"Cette plante a déjà reçu de l'engrais"<<endl;
@@ -85,19 +113,11 @@ void Plante::arroser(){
 
 void Plante::tailler(){
     settaille(1);
+    setstadet();
     cout<<"Cette plante a été taillée"<<endl;
 }
 
 void Plante::inspecter(){
-    if (getmatur()>5 & getmatur()<15){
-        stadeMaturite="Plante";
-    }
-    if (getmatur()>15){
-        stadeMaturite="Fleur";
-    }
-    else {
-        stadeMaturite="Pousse";
-    }
     cout<<"Cette "<<getstadem()<<" de "<<nomP<<" a une hydratation de "<<gethydra()<<" et est "<<getstadet()<<endl;
 }
 

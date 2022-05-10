@@ -32,6 +32,8 @@ class Plante {
         void settaille(int valeurt);
         void setonengrais();
         void setoffengrais();
+        void setstadem();
+        void setstadet();
 
     //Méthodes
         void engrais();
