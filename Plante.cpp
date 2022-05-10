@@ -45,6 +45,18 @@ string Plante::getstadet(){
     return stadeTaille;
 };
 
+int Plante::getjfleur(){
+    return jFleur;
+}
+
+bool Plante::getisfleur(){
+    return isfleur;
+}
+
+bool Plante::getisfane(){
+    return isfane;
+}
+
 void Plante::sethydra(int valeurh){
     hydratation=hydratation+valeurh;
 };
@@ -71,6 +83,7 @@ void Plante::setstadem(){
     }
     if (getmatur()>15){
         stadeMaturite="Fleur";
+        setonisfleur();
     }
     else {
         stadeMaturite="Pousse";
@@ -91,6 +104,18 @@ void Plante::setstadet(){
         stadeTaille="blessée";
     }
 };
+
+void Plante::setjfleur(){
+    jFleur=jFleur+1;
+}
+
+void Plante::setonisfleur(){
+    isfleur=true;
+}
+
+void Plante::setfane(){
+    isfane=true;
+}
 
 
 

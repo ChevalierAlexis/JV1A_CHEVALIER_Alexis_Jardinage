@@ -19,6 +19,9 @@ class Plante {
         string stadeMaturite;
         string stadeTaille;
         bool engrai;
+        int jFleur;
+        bool isfleur;
+        bool isfane;
 
     //accesseurs
         int getmatur();
@@ -27,6 +30,9 @@ class Plante {
         bool getengrais();
         string getstadem();
         string getstadet();
+        int getjfleur();
+        bool getisfleur();
+        bool getisfane();
         void setmatur(int valeurm);
         void sethydra(int valeurh);
         void settaille(int valeurt);
@@ -34,6 +40,9 @@ class Plante {
         void setoffengrais();
         void setstadem();
         void setstadet();
+        void setjfleur();
+        void setonisfleur();
+        void setfane();
 
     //Méthodes
         void engrais();

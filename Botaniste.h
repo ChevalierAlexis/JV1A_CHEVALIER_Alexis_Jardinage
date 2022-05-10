@@ -25,7 +25,7 @@ class Botaniste
         //méthodes
         void dormir();
         int acheterp();
-        int vendre();
+        int vendre(); //int vendre(int nbrp);
         int achetere();
 
         Botaniste(); //Botaniste(string name);
